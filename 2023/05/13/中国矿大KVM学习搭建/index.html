@@ -16,26 +16,27 @@
   <meta name="author" content="张大卫">
   <meta name="keywords" content="张大卫 计算机科学与技术 中国矿业大学 孙越崎学院">
   
-    <meta name="description" content="孙越崎学院学院概况中国矿业大学孙越崎学院成立于2008年7月3日。 中国矿业大学自办学以来，积极探索多样化的拔尖人才培养模式，如二十世纪七十年代的师资班、二十世纪八十年代的A班、二十世纪九十年代的理工提高班等。 2008年7月3日，为纪念近代工矿泰斗、名誉校董孙越崎先生为中国矿业大学发展和人才培养作出的重大贡献，中国矿业大学下文（中矿委[2008]28号）以孙越崎先生的名字命名成立二级实体性学院—">
+    <meta name="description" content="实验步骤： 安装操作系统前需要将虚拟化嵌套功能开启   通过 ip addr 查看 ens33 地址，使用终端工具以管理 IP 登录此虚拟机   在虚拟机中使用如下命令关闭相应服务    安装虚拟化组件   查看组件状态       上传 Centos 镜像至&#x2F;opt 中    网桥搭建： 查看网卡信息并修改网卡信息 ens33     修改 br0 信息   关闭 networkman">
 <meta property="og:type" content="article">
-<meta property="og:title" content="孙越崎学院">
-<meta property="og:url" content="https://zhangdw156.github.io/2023/05/04/%E5%AD%99%E8%B6%8A%E5%B4%8E%E5%AD%A6%E9%99%A2/index.html">
+<meta property="og:title" content="中国矿大KVM学习搭建">
+<meta property="og:url" content="https://zhangdw156.github.io/2023/05/13/%E4%B8%AD%E5%9B%BD%E7%9F%BF%E5%A4%A7KVM%E5%AD%A6%E4%B9%A0%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="张大卫">
-<meta property="og:description" content="孙越崎学院学院概况中国矿业大学孙越崎学院成立于2008年7月3日。 中国矿业大学自办学以来，积极探索多样化的拔尖人才培养模式，如二十世纪七十年代的师资班、二十世纪八十年代的A班、二十世纪九十年代的理工提高班等。 2008年7月3日，为纪念近代工矿泰斗、名誉校董孙越崎先生为中国矿业大学发展和人才培养作出的重大贡献，中国矿业大学下文（中矿委[2008]28号）以孙越崎先生的名字命名成立二级实体性学院—">
+<meta property="og:description" content="实验步骤： 安装操作系统前需要将虚拟化嵌套功能开启   通过 ip addr 查看 ens33 地址，使用终端工具以管理 IP 登录此虚拟机   在虚拟机中使用如下命令关闭相应服务    安装虚拟化组件   查看组件状态       上传 Centos 镜像至&#x2F;opt 中    网桥搭建： 查看网卡信息并修改网卡信息 ens33     修改 br0 信息   关闭 networkman">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305050929328.jpg">
-<meta property="article:published_time" content="2023-05-04T09:18:37.957Z">
-<meta property="article:modified_time" content="2023-05-05T03:51:19.068Z">
+<meta property="og:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132345639.webp">
+<meta property="article:published_time" content="2023-05-13T15:42:32.000Z">
+<meta property="article:modified_time" content="2023-05-15T13:39:44.635Z">
 <meta property="article:author" content="张大卫">
-<meta property="article:tag" content="张大卫 计算机科学与技术 中国矿业大学 孙越崎学院">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="KVM">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305050929328.jpg">
+<meta name="twitter:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132345639.webp">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>孙越崎学院 - 张大卫</title>
+  <title>中国矿大KVM学习搭建 - 张大卫</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -186,13 +187,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305050929328.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="孙越崎学院"></span>
+            <span id="subtitle" data-typed-text="中国矿大KVM学习搭建"></span>
           
         </div>
 
@@ -203,8 +204,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-04 17:18" pubdate>
-          2023年5月4日 下午
+        <time datetime="2023-05-13 23:42" pubdate>
+          2023年5月13日 晚上
         </time>
       </span>
     
@@ -215,7 +216,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          381 字
         
       </span>
     
@@ -226,7 +227,7 @@
         
         
         
-          19 分钟
+          4 分钟
         
       </span>
     
@@ -264,33 +265,89 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">孙越崎学院</h1>
+            <h1 style="display: none">中国矿大KVM学习搭建</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="孙越崎学院"><a href="#孙越崎学院" class="headerlink" title="孙越崎学院"></a>孙越崎学院</h1><h2 id="学院概况"><a href="#学院概况" class="headerlink" title="学院概况"></a>学院概况</h2><p><strong>中国矿业大学孙越崎学院</strong>成立于2008年7月3日。</p>
-<p><a target="_blank" rel="noopener" href="https://www.cumt.edu.cn/">中国矿业大学</a>自办学以来，积极探索多样化的拔尖人才培养模式，如二十世纪七十年代的师资班、二十世纪八十年代的A班、二十世纪九十年代的理工提高班等。 2008年7月3日，为纪念近代工矿泰斗、名誉校董<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=6504250&ss_c=ssc.citiao.link">孙越崎</a>先生为中国矿业大学发展和人才培养作出的重大贡献，中国矿业大学下文（中矿委[2008]28号）以孙越崎先生的名字命名成立二级实体性学院—孙越崎学院。</p>
-<center>
-    <a target="_blank" rel="noopener" href="https://baike.sogou.com/PicBooklet.v?imageGroupId=3368189&relateImageGroupIds=3368189,3368189&lemmaId=7558505&category="><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305050910240.jpg" srcset="/img/loading.gif" lazyload/></a>
-</center>
-
-<p>孙越崎学院成立大会(3)2008年10月16日上午，在孙越崎科技教育基金会第十七届颁奖大会上，全国政协原副主席<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=539683&ss_c=ssc.citiao.link">孙孚凌</a>，孙越崎科技教育基金会副主任、<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=7653037&ss_c=ssc.citiao.link">中国煤炭工业协会</a>党委书记濮洪九为中国矿业大学孙越崎学院正式揭牌。中国矿业大学校长<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=6283142&ss_c=ssc.citiao.link">葛世荣</a>介绍了孙越崎学院概况和学院有关机构组成名单。</p>
-<p>原<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=71431759&ss_c=ssc.citiao.link">全国人大常委会副委员长</a>、孙越崎科技教育基金会主任<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=269440&ss_c=ssc.citiao.link">何鲁丽</a>向孙越崎科技教育基金会第十七届颁奖大会发出贺信。何鲁丽在贺信中勉励获奖者再接再厉，更上一层楼。她希望大家以孙越崎先生精神为动力，在各自的岗位上，坚持科学发展观，不断创新，为祖国的能源事业做出更大的贡献。她强调指出，这次颁奖大会在中国矿业大学举行具有特殊的意义。</p>
-<p>孙先生生前创建的焦作工学院，后成为北京矿业学院，是今天中国矿业大学的前身。中国矿业大学为扩大孙老在青年学生中的影响，自2007年开始筹备成立的“孙越崎学院”，2008年正式招生，这次颁奖大会同时举行揭牌仪式，在此表示热烈的祝贺！希望孙越崎学院办出特色，为我国能源战线培养出更多的人才。孙越崎先生的女儿孙淑涵宣读了孙老家属致中国矿业大学的一封信。信中说，中国矿业大学为积极推进人才培养的新模式，决定成立孙越崎学院。作为孙越崎家属，他们完全赞同、支持并表示祝贺，相信孙越崎学院定能办成“第一流学院，培养第一流人才”的典范。“第一流学院，培养第一流人才”也是孙越崎先生在世的时候给中国矿业大学的题词。</p>
-<p>2008年11月7日中共中国矿业大学委员会发文（中矿委[2008]39号）成立孙越崎学院党支部。</p>
-<p>这是以近代工矿泰斗、学校前身——焦作工学院的名誉校董孙越崎先生的名字命名、组织本科教学的实体性二级学院。</p>
-<p>2008年9月，首次面向全校2008级新生进行选拔，90名优秀新生已经进入孙越崎学院学习。</p>
-<p>建立孙越崎学院，旨在充分利用和发挥我校的优质教育资源和学科优势，通过实施通识教育、创新教育和个性教育，培养厚基础、宽口径、强能力、高素质，具有创新精神和国际视野，德、智、体、美全面发展的拔尖人才。孙越崎学院也是我校实施本科教育优质工程的主体内容之一。</p>
-<h2 id="弹性学制滚动淘汰"><a href="#弹性学制滚动淘汰" class="headerlink" title="弹性学制滚动淘汰"></a>弹性学制滚动淘汰</h2><p>孙越崎学院将借鉴国外先进的教学管理模式，实行<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=264793&ss_c=ssc.citiao.link">学分制</a>和弹性学制。</p>
-<p>学生在完成学院的培养计划，修完规定的学分后即可毕业，修业年限可在3至5年内弹性调整。但每年学院将淘汰不能适应孙越崎学院学习的学生，退回原学院学习，并补充选拔相应数量的其他学院的优秀学生转入孙越崎学院学习，真正从根本上保证“精英学院”的人才培养质量。</p>
-<h2 id="工科本硕博一体化培养"><a href="#工科本硕博一体化培养" class="headerlink" title="工科本硕博一体化培养"></a>工科本硕博一体化培养</h2><p>中国矿业大学以“深化教育教学改革，大力培养一流学生”为指导，在孙越崎学院实施“本-硕-博”一体化拔尖创新人才培养。旨在利用和发挥学校国家重点学科资源优势，以精英化培养为目标，个性化、国际化教育为两翼，培养发展志向远大、基础宽厚、国际视野宽阔的学术精英和工程科技创新人才。孙越崎学院依托中国矿业大学国家重点（优势）学科，搭建交叉复合、宽口径工科创新拔尖人才培养平台。人才培养模式是由2学年的工科基础知识集中式平台培养，1-2学年的个性化专业培养和国际化培养构成；平台培养期间，学生修读课程由基础理科类、交叉<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=10559954&ss_c=ssc.citiao.link">工科类</a>、专业方向类三大模块课程构成。在保证宽厚工科知识基础、学科交叉复合等教学特色同时，实施完全学分制的1-2学年专业课程个性化教育。同时，实施科研项目为驱动的“创新<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=7732795&ss_c=ssc.citiao.link">导师制</a>”，加强学生科研、创新能力培养，为学生尽早进入学校国家级科研平台和学科深造创造条件。</p>
-<h2 id="自我管理自我发展"><a href="#自我管理自我发展" class="headerlink" title="自我管理自我发展"></a>自我管理自我发展</h2><p>孙越崎学院不同于其他学院。还在于该学院将不再设立专门的学生辅导员，<strong>学生成立自我管理委员会</strong>，自主处理学习、生活中的相关事务，真正体现自我管理和自我发展。</p>
-<p>孙越崎学院虽然是以近代工矿泰斗、名誉校董孙越崎先生的名字命名，但学院的招生并不限于煤矿专业，主要集中在理工科专业，也有少部分文科专业。</p>
-<p>孙越崎学院的成立，是<a target="_blank" rel="noopener" href="https://baike.sogou.com/lemma/ShowInnerLink.htm?lemmaId=85449732&ss_c=ssc.citiao.link">中国矿业大学</a>转变教学管理模式的一次全新尝试，该学院将成为培养优秀拔尖人才的特区。</p>
-<h2 id="学业导师科研激励"><a href="#学业导师科研激励" class="headerlink" title="学业导师科研激励"></a>学业导师科研激励</h2><p>孙越崎学院为每一名孙越崎学生配备专门的学业导师，其优秀导师是来自学校各院系，具有丰富教学、科研和指导经验的博士生或硕士生指导教师。导师负责学生的学业、科研训练等个性化指导，帮助学生制定符合个性发展的培养计划，学生参与导师的科研项目，在导师的指导下修读个性化课程。</p>
-<p>学校对进入孙越崎学院学习的学生，在奖学金、科研训练、科技竞赛、国内外学术交流等方面给予政策性倾斜，以激励拔尖人才成长。</p>
-<p>进入孙越崎学院学习的学生，在符合《中国矿业大学孙越崎学院管理办法》[<a target="_blank" rel="noopener" href="https://baike.sogou.com/v7558505.htm#quote1">1]</a>中的相关规定后均可保送硕士研究生，其中特别优秀者可以本硕连读或本硕博连读。个别不适应孙越崎学院学习的学生，将在前两学年末根据《中国矿业大学孙越崎学院管理办法》的有关规定分流至原专业或自选专业学习，同时其他学院优秀学生将通过选拔补充进入孙越崎学院学习。</p>
+                <h2 id="实验步骤："><a href="#实验步骤：" class="headerlink" title="实验步骤："></a>实验步骤：</h2><ul>
+<li><p>安装操作系统前需要将虚拟化嵌套功能开启</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342738.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+</li>
+<li><p>通过 ip addr 查看 ens33 地址，使用终端工具以管理 IP 登录此虚拟机</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342781.png" srcset="/img/loading.gif" lazyload alt="image-20230512174157018"></p>
+</li>
+<li><p>在虚拟机中使用如下命令关闭相应服务</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342766.png" srcset="/img/loading.gif" lazyload alt="image-20230512174304831"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342815.png" srcset="/img/loading.gif" lazyload alt="image-20230512174323270"></p>
+</li>
+<li><p>安装虚拟化组件</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342808.png" srcset="/img/loading.gif" lazyload alt="image-20230512175439497"></p>
+</li>
+<li><p>查看组件状态</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342774.png" srcset="/img/loading.gif" lazyload alt="image-20230512174353134"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342310.png" srcset="/img/loading.gif" lazyload alt="image-20230512174409284"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342466.png" srcset="/img/loading.gif" lazyload alt="image-20230512175225862"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342457.png" srcset="/img/loading.gif" lazyload alt="image-20230512175254306"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342518.png" srcset="/img/loading.gif" lazyload alt="image-20230512175325175"></p>
+</li>
+<li><p>上传 Centos 镜像至&#x2F;opt 中</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342476.png" srcset="/img/loading.gif" lazyload alt="image-20230512175512364"></p>
+</li>
+</ul>
+<h2 id="网桥搭建："><a href="#网桥搭建：" class="headerlink" title="网桥搭建："></a>网桥搭建：</h2><ul>
+<li><p>查看网卡信息并修改网卡信息 ens33</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342510.png" srcset="/img/loading.gif" lazyload alt="image-20230512175548058"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342882.png" srcset="/img/loading.gif" lazyload alt="image-20230513184448706"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342084.png" srcset="/img/loading.gif" lazyload alt="image-20230512175955313"></p>
+</li>
+<li><p>修改 br0 信息</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342091.png" srcset="/img/loading.gif" lazyload alt="image-20230512180629287"></p>
+</li>
+<li><p>关闭 networkmanager</p>
+</li>
+<li><p>重启网络服务</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342068.png" srcset="/img/loading.gif" lazyload alt="image-20230513184610564"></p>
+</li>
+</ul>
+<h2 id="VNC-环境搭建："><a href="#VNC-环境搭建：" class="headerlink" title="VNC 环境搭建："></a>VNC 环境搭建：</h2><ul>
+<li><p>安装 vnc 服务</p>
+</li>
+<li><p>vnc 服务配置——宿主机远程控制</p>
+</li>
+<li><p>设置 vnc 连接密码,输入命令 vncpasswd 以后连续输入两次密码，然后直接连 续回车</p>
+</li>
+<li><p>启动 VNC 服务</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342133.png" srcset="/img/loading.gif" lazyload alt="image-20230513184048111"></p>
+</li>
+</ul>
+<h2 id="创建虚拟机-VM01："><a href="#创建虚拟机-VM01：" class="headerlink" title="创建虚拟机 VM01："></a>创建虚拟机 VM01：</h2><ul>
+<li><p>使用 default 网络创建虚拟机“VM01”</p>
+</li>
+<li><p>查看 VNC ID</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342200.png" srcset="/img/loading.gif" lazyload alt="image-20230513184013723"></p>
+</li>
+<li><p>远程 VNC 登录</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342475.png" srcset="/img/loading.gif" lazyload alt="image-20230513183954163"></p>
+</li>
+<li><p>VNC 登录后使用“ip addr”查看当前 IP 地址</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342581.png" srcset="/img/loading.gif" lazyload alt="image-20230513230426505"></p>
+</li>
+<li><p>测试与外网连通性</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342591.png" srcset="/img/loading.gif" lazyload alt="image-20230513230449345"></p>
+</li>
+</ul>
+<h2 id="修改虚拟机网络为新建网络："><a href="#修改虚拟机网络为新建网络：" class="headerlink" title="修改虚拟机网络为新建网络："></a>修改虚拟机网络为新建网络：</h2><ul>
+<li><p>创建新网络“test”，指定新桥“virbr1”</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342695.png" srcset="/img/loading.gif" lazyload alt="image-20230513233346174"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342719.png" srcset="/img/loading.gif" lazyload alt="image-20230513233355936"></p>
+</li>
+<li><p>将虚拟机“VM01”网络修改为新网络“test”</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342046.png" srcset="/img/loading.gif" lazyload alt="image-20230513233523901"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342038.png" srcset="/img/loading.gif" lazyload alt="image-20230513233611876"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342277.png" srcset="/img/loading.gif" lazyload alt="image-20230513233633719"></p>
+</li>
+</ul>
 
                 
               </div>
@@ -299,6 +356,36 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/" class="category-chain-item">云计算综合实训</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+        <a href="/tags/KVM/">#KVM</a>
+      
+    </div>
   
 </div>
 
@@ -308,8 +395,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>孙越崎学院</div>
-      <div>https://zhangdw156.github.io/2023/05/04/孙越崎学院/</div>
+      <div>中国矿大KVM学习搭建</div>
+      <div>https://zhangdw156.github.io/2023/05/13/中国矿大KVM学习搭建/</div>
     </div>
     <div class="license-meta">
       
@@ -321,7 +408,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月4日</div>
+          <div>2023年5月13日</div>
         </div>
       
       
@@ -353,15 +440,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/13/%E4%B8%AD%E5%9B%BD%E7%9F%BF%E5%A4%A7KVM%E5%AD%A6%E4%B9%A0%E6%90%AD%E5%BB%BA/" title="中国矿大KVM学习搭建">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">中国矿大KVM学习搭建</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/05/04/%E5%AD%99%E8%B6%8A%E5%B4%8E%E5%AD%A6%E9%99%A2/" title="孙越崎学院">
+                        <span class="hidden-mobile">孙越崎学院</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
