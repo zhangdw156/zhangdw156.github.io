@@ -16,27 +16,27 @@
   <meta name="author" content="张大卫">
   <meta name="keywords" content="张大卫 计算机科学与技术 中国矿业大学 孙越崎学院">
   
-    <meta name="description" content="实验步骤： 安装操作系统前需要将虚拟化嵌套功能开启   通过 ip addr 查看 ens33 地址，使用终端工具以管理 IP 登录此虚拟机   在虚拟机中使用如下命令关闭相应服务    安装虚拟化组件   查看组件状态       上传 Centos 镜像至&#x2F;opt 中    网桥搭建： 查看网卡信息并修改网卡信息 ens33     修改 br0 信息   关闭 networkman">
+    <meta name="description" content="L2-005 集合相似度给定两个整数集合，它们的相似度定义为：N**c&#x2F;N**t×100%。其中N**c是两个集合都有的不相等整数的个数，N**t是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。 输入格式：输入第一行给出一个正整数N（≤50），是集合的个数。随后N行，每行对应一个集合。每个集合首先给出一个正整数M（≤104），是集合中元素的个数；然后跟M个[">
 <meta property="og:type" content="article">
-<meta property="og:title" content="中国矿大KVM学习搭建">
-<meta property="og:url" content="https://zhangdw156.github.io/2023/05/13/%E4%B8%AD%E5%9B%BD%E7%9F%BF%E5%A4%A7KVM%E5%AD%A6%E4%B9%A0%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="L2-005 集合相似度">
+<meta property="og:url" content="https://zhangdw156.github.io/2023/05/19/L2-005-%E9%9B%86%E5%90%88%E7%9B%B8%E4%BC%BC%E5%BA%A6/index.html">
 <meta property="og:site_name" content="张大卫">
-<meta property="og:description" content="实验步骤： 安装操作系统前需要将虚拟化嵌套功能开启   通过 ip addr 查看 ens33 地址，使用终端工具以管理 IP 登录此虚拟机   在虚拟机中使用如下命令关闭相应服务    安装虚拟化组件   查看组件状态       上传 Centos 镜像至&#x2F;opt 中    网桥搭建： 查看网卡信息并修改网卡信息 ens33     修改 br0 信息   关闭 networkman">
+<meta property="og:description" content="L2-005 集合相似度给定两个整数集合，它们的相似度定义为：N**c&#x2F;N**t×100%。其中N**c是两个集合都有的不相等整数的个数，N**t是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。 输入格式：输入第一行给出一个正整数N（≤50），是集合的个数。随后N行，每行对应一个集合。每个集合首先给出一个正整数M（≤104），是集合中元素的个数；然后跟M个[">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132345639.webp">
-<meta property="article:published_time" content="2023-05-13T15:42:32.000Z">
-<meta property="article:modified_time" content="2023-05-15T13:39:44.635Z">
+<meta property="og:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305050933834.jpg">
+<meta property="article:published_time" content="2023-05-19T00:56:03.000Z">
+<meta property="article:modified_time" content="2023-05-19T02:00:10.895Z">
 <meta property="article:author" content="张大卫">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="KVM">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132345639.webp">
+<meta name="twitter:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305050933834.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>中国矿大KVM学习搭建 - 张大卫</title>
+  <title>L2-005 集合相似度 - 张大卫</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -193,7 +193,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="中国矿大KVM学习搭建"></span>
+            <span id="subtitle" data-typed-text="L2-005 集合相似度"></span>
           
         </div>
 
@@ -204,8 +204,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-13 23:42" pubdate>
-          2023年5月13日 晚上
+        <time datetime="2023-05-19 08:56" pubdate>
+          2023年5月19日 早上
         </time>
       </span>
     
@@ -216,7 +216,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          381 字
+          2.2k 字
         
       </span>
     
@@ -227,7 +227,7 @@
         
         
         
-          4 分钟
+          19 分钟
         
       </span>
     
@@ -265,89 +265,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">中国矿大KVM学习搭建</h1>
+            <h1 style="display: none">L2-005 集合相似度</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="实验步骤："><a href="#实验步骤：" class="headerlink" title="实验步骤："></a>实验步骤：</h2><ul>
-<li><p>安装操作系统前需要将虚拟化嵌套功能开启</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342738.png" srcset="/img/loading.gif" lazyload alt="img"></p>
-</li>
-<li><p>通过 ip addr 查看 ens33 地址，使用终端工具以管理 IP 登录此虚拟机</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342781.png" srcset="/img/loading.gif" lazyload alt="image-20230512174157018"></p>
-</li>
-<li><p>在虚拟机中使用如下命令关闭相应服务</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342766.png" srcset="/img/loading.gif" lazyload alt="image-20230512174304831"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342815.png" srcset="/img/loading.gif" lazyload alt="image-20230512174323270"></p>
-</li>
-<li><p>安装虚拟化组件</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342808.png" srcset="/img/loading.gif" lazyload alt="image-20230512175439497"></p>
-</li>
-<li><p>查看组件状态</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342774.png" srcset="/img/loading.gif" lazyload alt="image-20230512174353134"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342310.png" srcset="/img/loading.gif" lazyload alt="image-20230512174409284"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342466.png" srcset="/img/loading.gif" lazyload alt="image-20230512175225862"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342457.png" srcset="/img/loading.gif" lazyload alt="image-20230512175254306"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342518.png" srcset="/img/loading.gif" lazyload alt="image-20230512175325175"></p>
-</li>
-<li><p>上传 Centos 镜像至&#x2F;opt 中</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342476.png" srcset="/img/loading.gif" lazyload alt="image-20230512175512364"></p>
-</li>
-</ul>
-<h2 id="网桥搭建："><a href="#网桥搭建：" class="headerlink" title="网桥搭建："></a>网桥搭建：</h2><ul>
-<li><p>查看网卡信息并修改网卡信息 ens33</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342510.png" srcset="/img/loading.gif" lazyload alt="image-20230512175548058"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342882.png" srcset="/img/loading.gif" lazyload alt="image-20230513184448706"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342084.png" srcset="/img/loading.gif" lazyload alt="image-20230512175955313"></p>
-</li>
-<li><p>修改 br0 信息</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342091.png" srcset="/img/loading.gif" lazyload alt="image-20230512180629287"></p>
-</li>
-<li><p>关闭 networkmanager</p>
-</li>
-<li><p>重启网络服务</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342068.png" srcset="/img/loading.gif" lazyload alt="image-20230513184610564"></p>
-</li>
-</ul>
-<h2 id="VNC-环境搭建："><a href="#VNC-环境搭建：" class="headerlink" title="VNC 环境搭建："></a>VNC 环境搭建：</h2><ul>
-<li><p>安装 vnc 服务</p>
-</li>
-<li><p>vnc 服务配置——宿主机远程控制</p>
-</li>
-<li><p>设置 vnc 连接密码,输入命令 vncpasswd 以后连续输入两次密码，然后直接连 续回车</p>
-</li>
-<li><p>启动 VNC 服务</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342133.png" srcset="/img/loading.gif" lazyload alt="image-20230513184048111"></p>
-</li>
-</ul>
-<h2 id="创建虚拟机-VM01："><a href="#创建虚拟机-VM01：" class="headerlink" title="创建虚拟机 VM01："></a>创建虚拟机 VM01：</h2><ul>
-<li><p>使用 default 网络创建虚拟机“VM01”</p>
-</li>
-<li><p>查看 VNC ID</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342200.png" srcset="/img/loading.gif" lazyload alt="image-20230513184013723"></p>
-</li>
-<li><p>远程 VNC 登录</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342475.png" srcset="/img/loading.gif" lazyload alt="image-20230513183954163"></p>
-</li>
-<li><p>VNC 登录后使用“ip addr”查看当前 IP 地址</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342581.png" srcset="/img/loading.gif" lazyload alt="image-20230513230426505"></p>
-</li>
-<li><p>测试与外网连通性</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342591.png" srcset="/img/loading.gif" lazyload alt="image-20230513230449345"></p>
-</li>
-</ul>
-<h2 id="修改虚拟机网络为新建网络："><a href="#修改虚拟机网络为新建网络：" class="headerlink" title="修改虚拟机网络为新建网络："></a>修改虚拟机网络为新建网络：</h2><ul>
-<li><p>创建新网络“test”，指定新桥“virbr1”</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342695.png" srcset="/img/loading.gif" lazyload alt="image-20230513233346174"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342719.png" srcset="/img/loading.gif" lazyload alt="image-20230513233355936"></p>
-</li>
-<li><p>将虚拟机“VM01”网络修改为新网络“test”</p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342046.png" srcset="/img/loading.gif" lazyload alt="image-20230513233523901"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342038.png" srcset="/img/loading.gif" lazyload alt="image-20230513233611876"></p>
-<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342277.png" srcset="/img/loading.gif" lazyload alt="image-20230513233633719"></p>
-</li>
-</ul>
+                <h2 id="L2-005-集合相似度"><a href="#L2-005-集合相似度" class="headerlink" title="L2-005 集合相似度"></a>L2-005 集合相似度</h2><p>给定两个整数集合，它们的相似度定义为：<em>N**c</em>&#x2F;<em>N**t</em>×100%。其中<em>N**c</em>是两个集合都有的不相等整数的个数，<em>N**t</em>是两个集合一共有的不相等整数的个数。你的任务就是计算任意一对给定集合的相似度。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入第一行给出一个正整数<em>N</em>（≤50），是集合的个数。随后<em>N</em>行，每行对应一个集合。每个集合首先给出一个正整数<em>M</em>（≤104），是集合中元素的个数；然后跟<em>M</em>个[0,109]区间内的整数。</p>
+<p>之后一行给出一个正整数<em>K</em>（≤2000），随后<em>K</em>行，每行对应一对需要计算相似度的集合的编号（集合从1到<em>N</em>编号）。数字间以空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>对每一对需要计算的集合，在一行中输出它们的相似度，为保留小数点后2位的百分比数字。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs in">3<br>3 99 87 101<br>4 87 101 5 87<br>7 99 101 18 5 135 18 99<br>2<br>1 2<br>1 3<br></code></pre></td></tr></table></figure>
+
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs out">50.00%<br>33.33%<br></code></pre></td></tr></table></figure>
+
+<h3 id="代码（21-x2F-25）"><a href="#代码（21-x2F-25）" class="headerlink" title="代码（21&#x2F;25）"></a>代码（21&#x2F;25）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> FOR(i,s,e) for(int i=s;i&lt;=e;i++)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> db1(a) cout&lt;&lt;#a&lt;&lt;<span class="hljs-string">&quot;=&quot;</span>&lt;&lt;a&lt;&lt;endl</span><br><span class="hljs-type">int</span> N,M,K;<br>vector&lt;set&lt;<span class="hljs-type">int</span>&gt;&gt; vs;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;N;<br>    <span class="hljs-built_in">FOR</span>(i,<span class="hljs-number">1</span>,N)&#123;<br>        cin&gt;&gt;M;<br>        set&lt;<span class="hljs-type">int</span>&gt; tmp;<br>        <span class="hljs-built_in">FOR</span>(j,<span class="hljs-number">1</span>,M)&#123;<br>            <span class="hljs-type">int</span> t;<br>            cin&gt;&gt;t;<br>            tmp.<span class="hljs-built_in">insert</span>(t);<br>        &#125;<br>        vs.<span class="hljs-built_in">push_back</span>(tmp);<br>    &#125;<br>    cin&gt;&gt;K;<br>    set&lt;<span class="hljs-type">int</span>&gt; nt;<br>    <span class="hljs-built_in">FOR</span>(i,<span class="hljs-number">1</span>,K)&#123;<br>        <span class="hljs-type">int</span> a,b;<br>        cin&gt;&gt;a&gt;&gt;b;<br>        nt.<span class="hljs-built_in">clear</span>();<br>        a-=<span class="hljs-number">1</span>;<br>        b-=<span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> j:vs[a])&#123;<br>            nt.<span class="hljs-built_in">insert</span>(j);<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> j:vs[b])&#123;<br>            nt.<span class="hljs-built_in">insert</span>(j);<br>        &#125;<br>        <span class="hljs-type">double</span> ans=<span class="hljs-number">100.0</span>*(vs[a].<span class="hljs-built_in">size</span>()+vs[b].<span class="hljs-built_in">size</span>()-nt.<span class="hljs-built_in">size</span>())/nt.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.2f%\n&quot;</span>,ans);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="代码（25-x2F-25）"><a href="#代码（25-x2F-25）" class="headerlink" title="代码（25&#x2F;25）"></a>代码（25&#x2F;25）</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> FOR(i,s,e) for(int i=s;i&lt;=e;i++)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> db1(a) cout&lt;&lt;#a&lt;&lt;<span class="hljs-string">&quot;=&quot;</span>&lt;&lt;a&lt;&lt;endl</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> db3(a,i,j) cout&lt;&lt;#a&lt;&lt;<span class="hljs-string">&quot;[&quot;</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">&quot;][&quot;</span>&lt;&lt;j&lt;&lt;<span class="hljs-string">&quot;]=&quot;</span>&lt;&lt;a[i][j]&lt;&lt;endl</span><br><span class="hljs-type">int</span> N,M,K;<br><span class="hljs-type">int</span> a[<span class="hljs-number">55</span>][<span class="hljs-number">10005</span>];<br><span class="hljs-type">int</span> b[<span class="hljs-number">55</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;N;<br>    <span class="hljs-built_in">FOR</span>(i,<span class="hljs-number">1</span>,N)&#123;<br>        cin&gt;&gt;M;<br>        <span class="hljs-built_in">FOR</span>(j,<span class="hljs-number">1</span>,M)&#123;<br>            cin&gt;&gt;a[i][j];<br>        &#125;<br>        b[i]=M;<br>        <span class="hljs-built_in">sort</span>(a[i]+<span class="hljs-number">1</span>,a[i]+M+<span class="hljs-number">1</span>);<br>    &#125;<br>    cin&gt;&gt;K;<br>    <span class="hljs-built_in">FOR</span>(t,<span class="hljs-number">1</span>,K)&#123;<br>        <span class="hljs-type">int</span> n1,n2;<br>        cin&gt;&gt;n1&gt;&gt;n2;<br>        <span class="hljs-type">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> nc=<span class="hljs-number">0</span>,nt=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(i&lt;=b[n1]&amp;&amp;j&lt;=b[n2])&#123;<br>            <span class="hljs-keyword">if</span>(a[n1][i]==a[n2][j])&#123;<br>                nc++;<br>                i++;<br>                <span class="hljs-keyword">while</span>(a[n1][i]==a[n1][i<span class="hljs-number">-1</span>])&#123;<br>                    i++;<br>                &#125;<br>                j++;<br>                <span class="hljs-keyword">while</span>(a[n2][j]==a[n2][j<span class="hljs-number">-1</span>])&#123;<br>                    j++;<br>                &#125;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a[n1][i]&lt;a[n2][j])&#123;<br>                i++;<br>                <span class="hljs-keyword">while</span>(a[n1][i]==a[n1][i<span class="hljs-number">-1</span>])&#123;<br>                    i++;<br>                &#125;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                j++;<br>                <span class="hljs-keyword">while</span>(a[n2][j]==a[n2][j<span class="hljs-number">-1</span>])&#123;<br>                    j++;<br>                &#125;<br>            &#125;<br>            nt++;<br>        &#125;<br>        nt+=b[n1]+b[n2]+<span class="hljs-number">2</span>-i-j;<br>        <span class="hljs-type">double</span> ans=<span class="hljs-number">100.0</span>*nc/nt;<br>        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%.2f%\n&quot;</span>,ans);<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -366,7 +300,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%BA%91%E8%AE%A1%E7%AE%97%E7%BB%BC%E5%90%88%E5%AE%9E%E8%AE%AD/" class="category-chain-item">云计算综合实训</a>
+  <a href="/categories/CSP/" class="category-chain-item">CSP</a>
   
   
 
@@ -381,9 +315,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
+        <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
       
-        <a href="/tags/KVM/">#KVM</a>
+        <a href="/tags/C/">#C++</a>
       
     </div>
   
@@ -395,8 +329,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>中国矿大KVM学习搭建</div>
-      <div>https://zhangdw156.github.io/2023/05/13/中国矿大KVM学习搭建/</div>
+      <div>L2-005 集合相似度</div>
+      <div>https://zhangdw156.github.io/2023/05/19/L2-005-集合相似度/</div>
     </div>
     <div class="license-meta">
       
@@ -408,7 +342,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年5月13日</div>
+          <div>2023年5月19日</div>
         </div>
       
       
@@ -440,15 +374,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/19/L2-005-%E9%9B%86%E5%90%88%E7%9B%B8%E4%BC%BC%E5%BA%A6/" title="L2-005 集合相似度">
+                      <a href="/2023/05/19/L2-007-%E5%AE%B6%E5%BA%AD%E6%88%BF%E4%BA%A7/" title="L2-007 家庭房产">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">L2-005 集合相似度</span>
+                        <span class="hidden-mobile">L2-007 家庭房产</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/05/13/%E4%B8%AD%E5%9B%BD%E7%9F%BF%E5%A4%A7KVM%E5%AD%A6%E4%B9%A0%E6%90%AD%E5%BB%BA/" title="中国矿大KVM学习搭建">
+                        <span class="hidden-mobile">中国矿大KVM学习搭建</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
