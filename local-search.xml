@@ -58,33 +58,6 @@
   
   
   <entry>
-    <title>中国矿大KVM学习搭建</title>
-    <link href="/2023/05/13/%E4%B8%AD%E5%9B%BD%E7%9F%BF%E5%A4%A7KVM%E5%AD%A6%E4%B9%A0%E6%90%AD%E5%BB%BA/"/>
-    <url>/2023/05/13/%E4%B8%AD%E5%9B%BD%E7%9F%BF%E5%A4%A7KVM%E5%AD%A6%E4%B9%A0%E6%90%AD%E5%BB%BA/</url>
-    
-    <content type="html"><![CDATA[<h2 id="实验步骤："><a href="#实验步骤：" class="headerlink" title="实验步骤："></a>实验步骤：</h2><ul><li><p>安装操作系统前需要将虚拟化嵌套功能开启</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342738.png" alt="img"></p></li><li><p>通过 ip addr 查看 ens33 地址，使用终端工具以管理 IP 登录此虚拟机</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342781.png" alt="image-20230512174157018"></p></li><li><p>在虚拟机中使用如下命令关闭相应服务</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342766.png" alt="image-20230512174304831"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342815.png" alt="image-20230512174323270"></p></li><li><p>安装虚拟化组件</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342808.png" alt="image-20230512175439497"></p></li><li><p>查看组件状态</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342774.png" alt="image-20230512174353134"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342310.png" alt="image-20230512174409284"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342466.png" alt="image-20230512175225862"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342457.png" alt="image-20230512175254306"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342518.png" alt="image-20230512175325175"></p></li><li><p>上传 Centos 镜像至&#x2F;opt 中</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342476.png" alt="image-20230512175512364"></p></li></ul><h2 id="网桥搭建："><a href="#网桥搭建：" class="headerlink" title="网桥搭建："></a>网桥搭建：</h2><ul><li><p>查看网卡信息并修改网卡信息 ens33</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342510.png" alt="image-20230512175548058"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342882.png" alt="image-20230513184448706"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342084.png" alt="image-20230512175955313"></p></li><li><p>修改 br0 信息</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342091.png" alt="image-20230512180629287"></p></li><li><p>关闭 networkmanager</p></li><li><p>重启网络服务</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342068.png" alt="image-20230513184610564"></p></li></ul><h2 id="VNC-环境搭建："><a href="#VNC-环境搭建：" class="headerlink" title="VNC 环境搭建："></a>VNC 环境搭建：</h2><ul><li><p>安装 vnc 服务</p></li><li><p>vnc 服务配置——宿主机远程控制</p></li><li><p>设置 vnc 连接密码,输入命令 vncpasswd 以后连续输入两次密码，然后直接连 续回车</p></li><li><p>启动 VNC 服务</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342133.png" alt="image-20230513184048111"></p></li></ul><h2 id="创建虚拟机-VM01："><a href="#创建虚拟机-VM01：" class="headerlink" title="创建虚拟机 VM01："></a>创建虚拟机 VM01：</h2><ul><li><p>使用 default 网络创建虚拟机“VM01”</p></li><li><p>查看 VNC ID</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342200.png" alt="image-20230513184013723"></p></li><li><p>远程 VNC 登录</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342475.png" alt="image-20230513183954163"></p></li><li><p>VNC 登录后使用“ip addr”查看当前 IP 地址</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342581.png" alt="image-20230513230426505"></p></li><li><p>测试与外网连通性</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342591.png" alt="image-20230513230449345"></p></li></ul><h2 id="修改虚拟机网络为新建网络："><a href="#修改虚拟机网络为新建网络：" class="headerlink" title="修改虚拟机网络为新建网络："></a>修改虚拟机网络为新建网络：</h2><ul><li><p>创建新网络“test”，指定新桥“virbr1”</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342695.png" alt="image-20230513233346174"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342719.png" alt="image-20230513233355936"></p></li><li><p>将虚拟机“VM01”网络修改为新网络“test”</p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342046.png" alt="image-20230513233523901"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342038.png" alt="image-20230513233611876"></p><p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305132342277.png" alt="image-20230513233633719"></p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>云计算综合实训</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Linux</tag>
-      
-      <tag>KVM</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>C++数据结构实验第四次作业（2022--矿大）</title>
     <link href="/2022/06/21/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E7%AC%AC%E5%9B%9B%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%882022-%E7%9F%BF%E5%A4%A7%EF%BC%89/"/>
     <url>/2022/06/21/C-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E7%AC%AC%E5%9B%9B%E6%AC%A1%E4%BD%9C%E4%B8%9A%EF%BC%882022-%E7%9F%BF%E5%A4%A7%EF%BC%89/</url>
