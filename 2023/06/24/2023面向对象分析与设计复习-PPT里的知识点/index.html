@@ -1,0 +1,874 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="张大卫">
+  <meta name="keywords" content="张大卫 计算机科学与技术 中国矿业大学 孙越崎学院">
+  
+    <meta name="description" content="根据老师画的考点和非考点，结合PPT整理的知识点第一部分1-3章 瀑布模型里的错误倾向   反馈和改写的必要性   如何在迭代中处理变更   迭代开发举例，假设有20次迭代      为什么重点讨论核心应用逻辑层的OOAD   在开始设计或实现之前试图定义大多数需求？ 需求是一个动态的过程，需求的不断变化是正常的。在开始设计或实现之前，只需要定义足够的需求来启动第一个迭代。在每个迭代结束后，可以重">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2023面向对象分析与设计复习--PPT里的知识点">
+<meta property="og:url" content="https://zhangdw156.github.io/2023/06/24/2023%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0-PPT%E9%87%8C%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:site_name" content="张大卫">
+<meta property="og:description" content="根据老师画的考点和非考点，结合PPT整理的知识点第一部分1-3章 瀑布模型里的错误倾向   反馈和改写的必要性   如何在迭代中处理变更   迭代开发举例，假设有20次迭代      为什么重点讨论核心应用逻辑层的OOAD   在开始设计或实现之前试图定义大多数需求？ 需求是一个动态的过程，需求的不断变化是正常的。在开始设计或实现之前，只需要定义足够的需求来启动第一个迭代。在每个迭代结束后，可以重">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305052209831.JPG">
+<meta property="article:published_time" content="2023-06-24T09:12:06.000Z">
+<meta property="article:modified_time" content="2023-06-24T09:17:04.907Z">
+<meta property="article:author" content="张大卫">
+<meta property="article:tag" content="OOAD">
+<meta property="article:tag" content="考试">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305052209831.JPG">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>2023面向对象分析与设计复习--PPT里的知识点 - 张大卫</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"zhangdw156.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>David</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>主页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>个人简介</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="2023面向对象分析与设计复习--PPT里的知识点"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-24 17:12" pubdate>
+          2023年6月24日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          29 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">2023面向对象分析与设计复习--PPT里的知识点</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="根据老师画的考点和非考点，结合PPT整理的知识点"><a href="#根据老师画的考点和非考点，结合PPT整理的知识点" class="headerlink" title="根据老师画的考点和非考点，结合PPT整理的知识点"></a>根据老师画的考点和非考点，结合PPT整理的知识点</h1><h2 id="第一部分1-3章"><a href="#第一部分1-3章" class="headerlink" title="第一部分1-3章"></a>第一部分1-3章</h2><ol>
+<li><p>瀑布模型里的错误倾向</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306241714946.png" srcset="/img/loading.gif" lazyload alt="image-20230622161746076"></p>
+</li>
+<li><p>反馈和改写的必要性</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306241715569.png" srcset="/img/loading.gif" lazyload alt="image-20230622161833632"></p>
+</li>
+<li><p>如何在迭代中处理变更</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306241715069.png" srcset="/img/loading.gif" lazyload alt="image-20230622161917299"></p>
+</li>
+<li><p>迭代开发举例，假设有20次迭代</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306241715900.png" srcset="/img/loading.gif" lazyload alt="image-20230622162029941"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306241715112.png" srcset="/img/loading.gif" lazyload alt="image-20230622162042744"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306241715138.png" srcset="/img/loading.gif" lazyload alt="image-20230622162054677"></p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306241715034.png" srcset="/img/loading.gif" lazyload alt="image-20230622162104960"></p>
+</li>
+<li><p>为什么重点讨论核心应用逻辑层的OOAD</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306241715976.png" srcset="/img/loading.gif" lazyload alt="image-20230622162304426"></p>
+</li>
+<li><p>在开始设计或实现之前试图定义大多数需求？</p>
+<p>需求是一个动态的过程，需求的不断变化是正常的。在开始设计或实现之前，只需要定义足够的需求来启动第一个迭代。在每个迭代结束后，可以重新评估需求，识别新的需求并将其纳入下一个迭代的计划中。</p>
+</li>
+<li><p>在实现之前定义大多数设计。</p>
+<p>设计是一个迭代的过程，设计是在需求被明确之后进行的，不需要在实现之前定义大多数设计。设计应该在每个迭代中进行，并且应该与实现和测试相结合，以确保设计的可行性和正确性。</p>
+</li>
+<li><p>在编程和测试之前定义和提交完整的架构。</p>
+<p>架构是一个迭代的过程，应该在设计迭代中进行。架构应该与需求和设计相结合，以确保满足业务需求并且设计的可行性和正确性。</p>
+</li>
+<li><p>在编程之前花费数日或数周进行UML建模？</p>
+<p>迭代的前两天进行UML建模就够了，要尽早地进行编程、测试和集成工作。</p>
+</li>
+<li><p>UML图和设计要准确定义极其详细的设计和模型。</p>
+<p>UML细节是否准确并不重要，关键是能相互理解，坚持用简单、常见的UML元素</p>
+</li>
+<li><p>编程只是简单机械地转换为代码。</p>
+<p>编程是一个迭代的过程，应该与设计和测试相结合，以确保代码的正确性和可维护性。编程需要遵循良好的编程实践和标准，并且应该与设计和测试相结合，以确保代码的正确性和可维护性。</p>
+</li>
+<li><p>认为初始阶段＝需求阶段，细化阶段＝设计阶段，构造阶段＝实现阶段？</p>
+<p>初始阶段不是需求阶段，而是研究可行性的阶段，要进行充分的调查以确定继续或终止项目。<br>细化阶段也不是需求或设计阶段，而是迭代地实现核心架构并解决高风险问题的阶段。构造阶段也不是实现阶段，而是对遗留下来的风险较低和比较简单的元素进行迭代实现，准备部署。</p>
+</li>
+<li><p>认为细化的目的是完整仔细地定义模型，以能够在构造阶段将其转换为代码？</p>
+<p>不是，细化的目的是已精化的构想、核心架构的迭代实现、高风险的解决、确定大多数需求和范围以及进行更为实际的评估。</p>
+</li>
+<li><p>坚信合适的迭代时间长度为三个月之久？</p>
+<p>合适的迭代时间长度取决于项目的规模和复杂度，以及团队的经验和能力。在实践中，迭代时间通常在几周到几个月之间，根据项目的需要和实际情况进行调整。</p>
+</li>
+<li><p>认为采用UP就意味要完成大量可能的活动和创建大量的文档？并且认为UP是需要遵循大量步骤的、正规和繁琐的过程。</p>
+<p>不是，可以运行的软件胜过面面俱到的文档。</p>
+</li>
+<li><p>试图对项目从开始到结束制定详细计划？</p>
+<p>计划是一个动态的过程，计划应该在每个迭代中进行，并且应该与需求、设计和测试相结合，以确保满足业务需求并且设计的可行性和正确性。</p>
+</li>
+<li><p>试图预测所有迭代，以及每个迭代中可能发生的事情。</p>
+<p>迭代是一个动态的过程，需求、设计和测试都是在迭代中进行的。因此，不可能预测所有迭代和每个迭代中可能发生的事情。相反，应该在每个迭代中识别需求和设计，并且根据实际情况进行调整和优化。</p>
+</li>
+</ol>
+<h2 id="第二部分4-7章"><a href="#第二部分4-7章" class="headerlink" title="第二部分4-7章"></a>第二部分4-7章</h2><ol>
+<li><p>初始不是需求阶段</p>
+<p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306241715980.png" srcset="/img/loading.gif" lazyload alt="image-20230622195156206"></p>
+</li>
+<li><p>一句话概括初始阶段</p>
+<p>预见项目的范围、设想和业务案例</p>
+</li>
+<li><p>一句话概括初始阶段解决的任务</p>
+<p>涉众对项目设想基本达成一致；项目值得继续认真研究</p>
+</li>
+<li><p>初始阶段会创建的制品（写出8个制品给满分）</p>
+<p>设想和业务案例</p>
+<p>用例模型</p>
+<p>补充性规格说明</p>
+<p>词汇表</p>
+<p>风险列表和风险管理计划</p>
+<p>原型和概念设计</p>
+<p>迭代计划</p>
+<p>阶段计划和软件开发计划</p>
+<p>开发案例</p>
+</li>
+<li><p>FURPS+ 模型 </p>
+<p>功能性（Functional）：特性、功能、安全性。</p>
+<p>可用性（Usability）：人性化因素、帮助、文档。</p>
+<p>可靠性（Reliability）：故障频率、可恢复性、可预测性。</p>
+<p>性能（Performance）：响应时间、吞吐量、准确性、有效性、资源利用率。</p>
+<p>可支持性（Supportability）：适应性、可维护性、国际化、可配置性。</p>
+<p>“FURPS+”中“+”是指一些辅助性的和次要的因素，比如：</p>
+<p>实现（Implementation）：资源限制、语言和工具、硬件等。</p>
+<p>接口（Interface）：强加于外部系统接口之上的约束。</p>
+<p>操作（Operation）：对其操作设置的系统管理。</p>
+<p>包装（Packaging）：例如物理的包装盒。</p>
+<p>授权（Legal）：许可证或其他方式。</p>
+</li>
+<li><p>质量属性</p>
+<p>质量属性（质量需求），包括可用性、可靠性、性能和可支持性。</p>
+<p>进行架构分析时，质量属性对系统架构由极大影响，高性能、高可靠性需求将影响软件和硬件构件的选择及其配置</p>
+</li>
+<li><p>详细用例的模板</p>
+<ul>
+<li>用例名称：以动词开始</li>
+<li>范围：界定了所要设计的系统</li>
+<li>级别：用户目标级别或子功能级别（重用，如信用卡支付）。</li>
+<li>主要参与者：调用系统，使之交付服务</li>
+<li>涉众及其关注点列表：关注该用例的人及其需要。重要！能够让我们更清楚详细的系统职责</li>
+<li>前置条件：值得告知读者的，开始前必须为真的条件</li>
+<li>成功保证：值得告知读者的，成功完成必须满足的条件</li>
+<li>主成功场景：典型的、无条件的、理想方式的成功场景</li>
+<li>扩展：成功或失败的替代场景</li>
+<li>特殊需求：相关的非功能需求</li>
+<li>技术和数据变元表：不同的I&#x2F;O方法和数据格式</li>
+<li>发生频率：影响对实现的调查、测试和时间安排</li>
+<li>杂项：例如未解决问题</li>
+</ul>
+</li>
+<li><p><strong>最重要的两个实例，POS机和Monopoly游戏</strong></p>
+</li>
+<li><p><strong>第六章和第七章所有的示例都很重要</strong></p>
+</li>
+</ol>
+<h2 id="第三部分8-9章"><a href="#第三部分8-9章" class="headerlink" title="第三部分8-9章"></a>第三部分8-9章</h2><ol>
+<li><p>一句话表达细化</p>
+<p>构造核心架构，解决高风险元素，定义大部分需求，以及预计总体进度和资源。</p>
+</li>
+<li><p>细化的关键思想和最佳实践</p>
+<p>实行短时间定量、风险驱动的迭代。<br>及早开始编程。<br>对架构的核心和风险部分进行适应性设计，实现和测试。<br>尽早，频繁，实际地测试。<br>基于来自测试、用户、开发者的反馈进行调整。<br>通过一系列讨论会，详细编写大部分用例和其他需求，每个细化迭代举行一次。</p>
+</li>
+<li><p>细化阶段开始构建的制品</p>
+<p>领域模型</p>
+<p>设计模型</p>
+<p>软件架构文档</p>
+<p>数据模型</p>
+<p>用例示意图、用户界面原型</p>
+</li>
+<li><p>何时需要描述类</p>
+<p>需要有关商品或服务的描述，独立于任何商品或服务的现有实例。<br>删除其所描述事务（如Item）的实例后，导致信息丢失，而这些信息是需要维护的，但是被错误地与所删除的事务关联起来。<br>减少冗余或重复信息。</p>
+</li>
+<li><p>何时定义新的数据类型类</p>
+<p>在下述情况下，在领域模型里，把最初被认为是数字或字符串的数据类型表示为新的数据类型类：<br>由不同的小节组成（如电话号码、人名、地址）<br>具有与之相关的操作，例如解析或校验（如社会安全号）<br>具有其他属性（如促销价格有开始日期和结束日期）<br>单位的数量（如支付总额具有货币单位）<br>具有以上性质的一个或多个类型的抽象（如商品标识符）</p>
+</li>
+</ol>
+<h2 id="第三部分10-16章"><a href="#第三部分10-16章" class="headerlink" title="第三部分10-16章"></a>第三部分10-16章</h2><ol>
+<li>第十章没画</li>
+<li>第十一章讲的是操作契约和系统操作，但是这两个都说不考，所以第十一章也不考</li>
+<li>第十二章没画</li>
+<li>第十三章画重点，但是说不考</li>
+<li>第十四章没画</li>
+<li>第十五章没画</li>
+<li>第十六章没画</li>
+</ol>
+<h2 id="第四部分17章"><a href="#第四部分17章" class="headerlink" title="第四部分17章"></a>第四部分17章</h2><ol>
+<li><p>信息专家不考</p>
+</li>
+<li><p>控制器不考</p>
+</li>
+<li><p>创建者</p>
+<ul>
+<li><p>针对的问题</p>
+<p>谁应该负责创建某类的新实例？</p>
+</li>
+<li><p>提供的解决方案</p>
+<p>如果以下的条件之一（越多越好）为真时，将创建类A实例的职责分配给类B[9]：B“包含”或组成聚集A。B记录A。B直接使用A。B具有A的初始化数据，并且在创建A时会将这些数据传递给A。因此对于A的创建而言，B是专家。B是对象A的创建者。如果有一个以上的选项适用，通常首选聚集或包含A的类B。</p>
+</li>
+<li><p>禁忌</p>
+<p>为了性能而使用回收的实例，基于某些外部特性值有条件地创建一个或一族类的实例，在这些情况下，最好的方法是把创建职责委派给称为具体工厂或抽象工厂的辅助类，</p>
+</li>
+<li><p>优点</p>
+<ul>
+<li>支持低耦合</li>
+<li>这种方法可能不会增加耦合性</li>
+</ul>
+</li>
+<li><p>相关的设计模式或原则</p>
+<ul>
+<li>低耦合</li>
+<li>具体工厂，抽象工厂</li>
+<li>整体-部分</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>低耦合</p>
+<ul>
+<li><p>针对的问题</p>
+<p>怎样降低依赖性，减少变化带来的影响，提高重用性？</p>
+</li>
+<li><p>提供的解决方案</p>
+<p>分配职责，使耦合性尽可能低。利用这一原则来评估可选方案。</p>
+</li>
+<li><p>禁忌</p>
+<p>高耦合对于稳定和普遍使用的元素而言并不是问题。例如，J2EE应用能安全地将自己与Java库（java.util等）耦合，因为Java库是稳定、普遍使用的。</p>
+</li>
+<li><p>优点</p>
+<ul>
+<li>不受其他构件变化的影响。</li>
+<li>易于单独理解。</li>
+<li>便于复用。</li>
+</ul>
+</li>
+<li><p>相关的设计模式或原则</p>
+<p>防止变异</p>
+</li>
+</ul>
+</li>
+<li><p>高内聚</p>
+<ul>
+<li><p>针对的问题</p>
+<p>怎样保持对象是有重点的、可理解的、可管理的，并且能够支持低耦合？</p>
+</li>
+<li><p>提供的解决方案</p>
+<p>分配职责可保持较高的内聚性。可利用这一点来评估候选方案。</p>
+</li>
+<li><p>禁忌</p>
+<p>在少数情况下，可以接受较低内聚。例如使用一个接收一组数据的远程操作setData来代替具有三个细颗粒操作（setName、setSalary和setHireDate）的远程对象，可以减少远程调用从而获得较好的性能。</p>
+</li>
+<li><p>优点</p>
+<ul>
+<li>能够更加轻松、清楚地理解设计。</li>
+<li>简化了维护和改进工作。</li>
+<li>通常支持低耦合。</li>
+<li>由于内聚的类可以用于某个特定的目的，因此细粒度、相关性强的功能的重用性增强。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/OOAD/">#OOAD</a>
+      
+        <a href="/tags/%E8%80%83%E8%AF%95/">#考试</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>2023面向对象分析与设计复习--PPT里的知识点</div>
+      <div>https://zhangdw156.github.io/2023/06/24/2023面向对象分析与设计复习-PPT里的知识点/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>张大卫</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年6月24日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/05/25/CSP-202303-3-LDAP/" title="CSP-202303-3-LDAP">
+                        <span class="hidden-mobile">CSP-202303-3-LDAP</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
