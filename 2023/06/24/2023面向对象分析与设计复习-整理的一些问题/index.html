@@ -377,7 +377,7 @@
 <h2 id="42-以Board（棋盘）和Square（方格）之间是组合关系为例，说明组合关系包含哪些含义"><a href="#42-以Board（棋盘）和Square（方格）之间是组合关系为例，说明组合关系包含哪些含义" class="headerlink" title="42. 以Board（棋盘）和Square（方格）之间是组合关系为例，说明组合关系包含哪些含义"></a>42. 以Board（棋盘）和Square（方格）之间是组合关系为例，说明组合关系包含哪些含义</h2><p>组合关系有几个含义：</p>
 <p>（1）在某一时刻，部分的实例（如：Square）只属于一个组成实例(如：Board)。</p>
 <p>（2）部分必须总是属于组成（不存在随意游离的Fingers）。</p>
-<p>（3）组成要负责创建和删除其部分，既可以自己来创建&#x2F;删除部分，也可以与其他对象协作来创建&#x2F;删除部分。如果组成被销毁，其部分也必须被销毁。</p>
+<p>（3）组成要负责创建和删除其部分，既可以自己来创建/删除部分，也可以与其他对象协作来创建/删除部分。如果组成被销毁，其部分也必须被销毁。</p>
 <h2 id="43-以下一代POS系统的分层逻辑架构为例，说明为什么要实现模型与视图的分离"><a href="#43-以下一代POS系统的分层逻辑架构为例，说明为什么要实现模型与视图的分离" class="headerlink" title="43. 以下一代POS系统的分层逻辑架构为例，说明为什么要实现模型与视图的分离"></a>43. 以下一代POS系统的分层逻辑架构为例，说明为什么要实现模型与视图的分离</h2><p>模型-视图分离的动机包括：</p>
 <ul>
 <li><p>支持内聚的模型定义，这些定义只关注领域过程，而不是用户界面。</p>
@@ -566,6 +566,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -783,6 +789,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

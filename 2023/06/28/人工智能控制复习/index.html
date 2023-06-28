@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202305052209831.JPG">
 <meta property="article:published_time" content="2023-06-28T12:01:35.000Z">
-<meta property="article:modified_time" content="2023-06-28T12:05:54.113Z">
+<meta property="article:modified_time" content="2023-06-28T12:50:32.723Z">
 <meta property="article:author" content="张大卫">
 <meta property="article:tag" content="考试">
 <meta property="article:tag" content="人工智能控制">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3k 字
+          2.8k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          25 分钟
+          24 分钟
         
       </span>
     
@@ -350,25 +350,25 @@
 <p>动态强度：证据的强度，CF（E）</p>
 <p>证据不确定性合成</p>
 <ul>
-<li>多个证据合取：$CF(E)&#x3D;min{CF(E_1),CF(E_1),\cdots ,CF(E_n)}$</li>
-<li>多个证据析取：$CF(E)&#x3D;max{CF(E_1),CF(E_2),\cdots ,CF(E_n)}$</li>
+<li>多个证据合取：$CF(E)=min\{CF(E_1),CF(E_1),\cdots ,CF(E_n)\}$</li>
+<li>多个证据析取：$CF(E)=max\{CF(E_1),CF(E_2),\cdots ,CF(E_n)\}$</li>
 </ul>
-<p>证据不确定性传递：$CF(E)&#x3D;CF(H,E)\times max{0,CF(E)}$</p>
+<p>证据不确定性传递：$CF(E)=CF(H,E)\times max\{0,CF(E)\}$</p>
 <p>结论不确定性合成算法</p>
 <ul>
-<li>$CF_{1,2}&#x3D;CF_1(H)+CF_2(H)-CF_1(H)CF_2(H),若CF_1(H)\ge 0,CF_2(H)\ge 0$</li>
-<li>$CF_{1,2}&#x3D;CF_1(H)+CF_2(H)+CF_1(H)CF_2(H),若CF_1(H)&lt;0,CF_2(H)&lt;0$</li>
-<li>$CF_{1,2}&#x3D;\frac{CF_1(H)+CF_2(H)}{1-min{|CF_1(H),CF_2(H)|}},CF_1(H)与 CF_2(H)异号$</li>
+<li>$CF_{1,2}=CF_1(H)+CF_2(H)-CF_1(H)CF_2(H),若CF_1(H)\ge 0,CF_2(H)\ge 0$</li>
+<li>$CF_{1,2}=CF_1(H)+CF_2(H)+CF_1(H)CF_2(H),若CF_1(H)&lt;0,CF_2(H)&lt;0$</li>
+<li>$CF_{1,2}=\frac{CF_1(H)+CF_2(H)}{1-min\{|CF_1(H),CF_2(H)|\}},CF_1(H)与 CF_2(H)异号$</li>
 </ul>
 <p><strong>例题</strong></p>
 <p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281917342.png" srcset="/img/loading.gif" lazyload alt="image-20230628171046296"><br><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281917013.png" srcset="/img/loading.gif" lazyload alt="image-20230628171101822"><br><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281917856.png" srcset="/img/loading.gif" lazyload alt="image-20230628171107677"><br><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281917407.png" srcset="/img/loading.gif" lazyload alt="image-20230628171113420"><br><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281917087.png" srcset="/img/loading.gif" lazyload alt="image-20230628171118935"></p>
 <h3 id="4-2-证据理论"><a href="#4-2-证据理论" class="headerlink" title="4.2 证据理论"></a>4.2 证据理论</h3><p>概率分配函数：把D的任意一个子集A都映射为[0,1]上的一个数M(A)</p>
-<p>信任函数：$Bel(A)&#x3D;\sum_{B\in A}M(B)$</p>
-<p>似然函数：$Pl(A)&#x3D;1-Bel(\urcorner A)$</p>
+<p>信任函数：$Bel(A)=\sum_{B\in A}M(B)$</p>
+<p>似然函数：$Pl(A)=1-Bel(\urcorner A)$</p>
 <p>概率分配函数的正交和：</p>
 <ul>
-<li>$M(A)&#x3D;K^{-1}\sum_{x\cap y&#x3D;A}M_1(x)M_2(y)$</li>
-<li>$K&#x3D;1-\sum_{x\cap y}M_1(x)M_2(y)&#x3D;\sum_{x\cap y\neq \Phi}M_1(x)M_2(y)$</li>
+<li>$M(A)=K^{-1}\sum_{x\cap y=A}M_1(x)M_2(y)$</li>
+<li>$K=1-\sum_{x\cap y}M_1(x)M_2(y)=\sum_{x\cap y\neq \Phi}M_1(x)M_2(y)$</li>
 </ul>
 <p><strong>例题</strong></p>
 <p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281917311.png" srcset="/img/loading.gif" lazyload alt="image-20230628164715692"><br><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281918049.png" srcset="/img/loading.gif" lazyload alt="image-20230628164723301"><br><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281918585.png" srcset="/img/loading.gif" lazyload alt="image-20230628164731581"><br><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281918064.png" srcset="/img/loading.gif" lazyload alt="image-20230628164739771"></p>
@@ -382,21 +382,21 @@
 </ul>
 <p>模糊集合的表示方法：</p>
 <ul>
-<li><p>$A&#x3D;{(x,\mu_A(x)),x\in X}$</p>
+<li><p>$A=\{(x,\mu_A(x)),x\in X\}$</p>
 </li>
 <li><p>$\mu_A(x)$：元素x属于模糊集A的隶属度，X是元素x的论域</p>
 </li>
 <li><p>Zadeh表示法：</p>
 <ul>
-<li>$A&#x3D;\sum_{i&#x3D;1}^{n}\mu_A(x_i)&#x2F;x$</li>
-<li>$A&#x3D;\int_{x\in U}\mu_A(x)&#x2F;x$</li>
+<li>$A=\sum_{i=1}^{n}\mu_A(x_i)/x$</li>
+<li>$A=\int_{x\in U}\mu_A(x)/x$</li>
 </ul>
 </li>
 <li><p>序偶表示法</p>
-<p>$A&#x3D;{(\mu_A(x_1),x_1),(\mu_A(x_2),x_2),\dots,(\mu_A(x_n),x_n)}$</p>
+<p>$A=\{(\mu_A(x_1),x_1),(\mu_A(x_2),x_2),\dots,(\mu_A(x_n),x_n)\}$</p>
 </li>
 <li><p>向量表示法：</p>
-<p>$A&#x3D;{\mu_A(x_1),\mu_A(x_2),\dots,\mu_A(x_n)}$</p>
+<p>$A=\{\mu_A(x_1),\mu_A(x_2),\dots,\mu_A(x_n)\}$</p>
 </li>
 </ul>
 <p>隶属函数：</p>
@@ -412,24 +412,24 @@
 </ul>
 <p>模糊集合的交并补：</p>
 <ul>
-<li>交运算：$\mu_{A\and B}(x)&#x3D;min{\mu_A(x),\mu_B(x)}$</li>
-<li>并运算：$\mu_{A\or B}&#x3D;max{\mu_A(x),\mu_B(x)}$</li>
-<li>补运算：$\mu_{\overline{A}}(x)&#x3D;1-\mu_A(x)$</li>
+<li>交运算：$\mu_{A\cap B}(x)=min\{\mu_A(x),\mu_B(x)\}$</li>
+<li>并运算：$\mu_{A\cup B}=max\{\mu_A(x),\mu_B(x)\}$</li>
+<li>补运算：$\mu_{\overline{A}}(x)=1-\mu_A(x)$</li>
 </ul>
 <p><strong>例题</strong></p>
 <p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281918031.png" srcset="/img/loading.gif" lazyload alt="image-20230628101152903"></p>
 <p>模糊集合的代数运算：</p>
 <ul>
-<li>代数积：$\mu_{AB}(x)&#x3D;\mu_A(x)\mu_B(x)$</li>
-<li>代数和：$\mu_{A+B}(x)&#x3D;\mu_A(x)+\mu_B(x)-\mu_{AB}(x)$</li>
-<li>有界和：$\mu_{A\bigoplus B}&#x3D;min{1,\mu_A(x)+\mu_B(x)}$</li>
-<li>有界积：$\mu_{A\bigotimes B}&#x3D;max{0,\mu_A(x)+\mu_B(x)-1}$</li>
+<li>代数积：$\mu_{AB}(x)=\mu_A(x)\mu_B(x)$</li>
+<li>代数和：$\mu_{A+B}(x)=\mu_A(x)+\mu_B(x)-\mu_{AB}(x)$</li>
+<li>有界和：$\mu_{A\bigoplus B}=min\{1,\mu_A(x)+\mu_B(x)\}$</li>
+<li>有界积：$\mu_{A\bigotimes B}=max\{0,\mu_A(x)+\mu_B(x)-1\}$</li>
 </ul>
 <p><strong>例题</strong></p>
 <p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281918641.png" srcset="/img/loading.gif" lazyload alt="image-20230628102227152"></p>
 <p>模糊关系，叉积运算：</p>
 <ul>
-<li>$\mu_{A\times B}(a,b)&#x3D;\mu_A^T\circ \mu_B$</li>
+<li>$\mu_{A\times B}(a,b)=\mu_A^T\circ \mu_B$</li>
 </ul>
 <p><strong>例题</strong></p>
 <p><img src="https://zhangdw156-img.oss-cn-beijing.aliyuncs.com/img/202306281918528.png" srcset="/img/loading.gif" lazyload alt="image-20230628102724384"></p>
@@ -486,7 +486,9 @@
 </li>
 <li><p>操作：表示引起状态变化的过程型知识的一组关系或函数</p>
 </li>
-<li><p>状态空间：利用状态变量和操作符号，标识系统或问题的有关知识的符号体系，状态空间是一个四元值<br>$$<br>(S,O,S_0,G)<br>$$<br>$S$：状态集合</p>
+<li><p>状态空间：利用状态变量和操作符号，标识系统或问题的有关知识的符号体系，状态空间是一个四元值</p>
+<script type="math/tex; mode=display">
+(S,O,S_0,G)</script><p>$S$：状态集合</p>
 <p>$O$：操作算子的集合</p>
 <p>$S_0$：包含问题的初始状态，是$S$的非空子集</p>
 <p>$G$：若干具体状态或满足某些性质的路径信息描述</p>
@@ -660,6 +662,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -877,6 +885,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

@@ -400,7 +400,7 @@
 <li>主成功场景：典型的、无条件的、理想方式的成功场景</li>
 <li>扩展：成功或失败的替代场景</li>
 <li>特殊需求：相关的非功能需求</li>
-<li>技术和数据变元表：不同的I&#x2F;O方法和数据格式</li>
+<li>技术和数据变元表：不同的I/O方法和数据格式</li>
 <li>发生频率：影响对实现的调查、测试和时间安排</li>
 <li>杂项：例如未解决问题</li>
 </ul>
@@ -666,6 +666,12 @@
   
 
 
+  
+  
+
+
+
+
 
 
 
@@ -881,6 +887,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
